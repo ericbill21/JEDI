@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models">
+  <meta property="og:title" content="JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models"/>
+  <meta property="og:description" content="We present LoRACLR, a method for merging personalized LoRA models for multi-concept image generation, aligning model weights with a contrastive objective to ensure distinct, high-quality concept synthesis."/>
+  <meta property="og:url" content="https://enis.dev/loraclr"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/teaser.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Image Generation, Diffusion Models, Test-Time Adaptation, Subject Disentanglement">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://www.w3counter.com/tracker.js?id=155968"></script>
+
+  <title>JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h3 class="title is-4">ICML PUT Workshop 2025</h3>
+            <h1 class="title is-1 publication-title">JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="www.linkedin.com/in/ericbill21" target="_blank">Eric Tillmann Bill</a>,</span>
+                <a href="https://enis.dev/" target="_blank">Enis Simsar</a>,</span>
+                <span class="author-block">
+                  <a href="https://da.inf.ethz.ch/" target="_blank">Thomas Hofmann</a></span>
+                </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">ETH Zürich</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- ArXiv abstract Link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2505.19166" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2505.19166" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="https://ericbill21.github.io/ICML_PUT_JEDI_Poster.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Poster</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/ericbill21/JEDI" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.jpg" alt="LoRACLR teaser"/>
+      <h2 class="subtitle has-text-centered">
+        <!-- <b>High-Fidelity Multi-Concept Image Generation.</b> Examples illustrating LoRACLR's ability to generate cohesive scenes with multiple distinct characters across diverse settings, such as noir detective themes and sci-fi realism. Each scene demonstrates LoRACLR's capability to combine varied concepts seamlessly, preserving the original identities of each character, as seen in <i>CONCEPTS</i>. -->
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce JEDI, a test-time adaptation method that enhances subject separation and compositional alignment in diffusion models without requiring retraining or external supervision. JEDI operates by minimizing semantic entanglement in attention maps using a novel Jensen-Shannon divergence based objective. To improve efficiency, we leverage adversarial optimization, reducing the number of updating steps required.
+            <br><br>
+            JEDI is model-agnostic and applicable to architectures such as Stable Diffusion 1.5 and 3.5, consistently improving prompt alignment and disentanglement in complex scenes. Additionally, JEDI provides a lightweight, CLIP-free disentanglement score derived from internal attention distributions, offering a principled benchmark for compositional alignment under test-time conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Issues Overview -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">Why do modern Text-to-Image models fail?</h2>
+        <figure class="image">
+          <img src="static/images/issue.jpg" alt="LoRACLR Framework">
+        </figure>
+        <p><strong>Issues in text-to-image models:</strong> Modern text-to-image models often struggle with prompts involving multiple subjects due to entangled attention maps. These maps serve as the model’s conditioning mechanism and can be viewed as spatial probability distributions that indicate where each subject is expected to appear in the image. When these distributions overlap, the model may produce blended features (attribute mixing), omit subjects entirely, or misplace them in the scene. JEDI addresses these issues by ensuring that each subject is represented, subjects remain spatially distinct, and all attributes of a subject stay correctly grouped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Issues Overview -->
+
+<!-- Qualitative Results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">WORK IN PROGRESS🚧</h2>
+        <!-- <figure class="image">
+          <img src="static/images/missing" alt="WIP">
+        </figure> -->
+        <p>Rest of the website will be live soon....!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Qualitative Results -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{bill2025jediforcejensenshannondivergence,
+      title={JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models}, 
+      author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
+      year={2025},
+      eprint={2505.19166},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
