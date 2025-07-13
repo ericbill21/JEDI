@@ -76,7 +76,7 @@
                     </span>
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2505.19166" target="_blank"
+                        <a href="https://openreview.net/pdf?id=HVQ3wL2jPI" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -136,7 +136,7 @@
         <div class="content has-text-justified">
           <p>
             We introduce JEDI, a test-time adaptation method that enhances subject separation and compositional alignment in diffusion models without requiring retraining or external supervision. JEDI operates by minimizing semantic entanglement in attention maps using a novel Jensen-Shannon divergence based objective. To improve efficiency, we leverage adversarial optimization, reducing the number of updating steps required.
-            <br><br>
+            <!-- <br><br> -->
             JEDI is model-agnostic and applicable to architectures such as Stable Diffusion 1.5 and 3.5, consistently improving prompt alignment and disentanglement in complex scenes. Additionally, JEDI provides a lightweight, CLIP-free disentanglement score derived from internal attention distributions, offering a principled benchmark for compositional alignment under test-time conditions.
           </p>
         </div>
@@ -178,11 +178,61 @@
 </section>
 <!-- End Qualitative Results -->
 
+<!-- Image carousel for SD 3.5 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title has-text-centered">Qualitative Comparison Stable Diffusion 3.5</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/sd35_1.png" alt="Qualitative Comparison SD 3.5"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Stable Diffusion 3.5 + JEDI:</b> The base model often mixes attributes or omits subjects, while JEDI effectively corrects these issues. It preserves the visual style of the original image and consistently handles prompts with multiple subjects.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/sd35_2.png" alt="Qualitative Comparison SD 3.5"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Stable Diffusion 3.5 + JEDI:</b> The base model often mixes attributes or omits subjects, while JEDI effectively corrects these issues. It preserves the visual style of the original image and consistently handles prompts with multiple subjects.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/sd35_3.png" alt="Qualitative Comparison SD 3.5"/>
+        <h2 class="subtitle has-text-centered">
+          <p><strong>Stable Diffusion 3.5 + JEDI:</strong> The base model often mixes attributes or omits subjects, while JEDI effectively corrects these issues. It preserves the visual style of the original image and consistently handles prompts with multiple subjects.</p>
+        </h2>
+      </div>
+   </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End Image carousel for SD 3.5 -->
+
+<!-- SD 1.5 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">Qualitative Comparison Stable Diffusion 1.5</h2>
+        <figure class="image">
+          <img src="static/images/sd15.png" alt="Qualitative Comparison SD 1.5"/>
+        </figure>
+        <p><strong>Stable Diffusion 1.5 vs. CONFORM vs. JEDI:</strong> JEDI achieves clearer subject separation and better compositional alignment than CONFORM, while requiring significantly fewer optimization steps—only 18 vs. 69. Unlike CONFORM, which introduces noticeable stylistic drift due to a high learning rate, JEDI preserves the visual style of the base model and delivers faster, more stable test-time adaptation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SD 1.5 -->
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{bill2025jediforcejensenshannondivergence,
+      <pre><code>@misc{bill2025jedi,
       title={JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models}, 
       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
       year={2025},
