@@ -4,7 +4,7 @@
 
 ><p align="center">
 
->[Eric Tillmann Bill](https://tunahansalih.github.io/), [Enis Simsar](https://enis.dev/), [Thomas Hofmann](https://da.inf.ethz.ch/people/ThomasHofmann)
+>[Eric Tillmann Bill](https://www.linkedin.com/in/ericbill21/), [Enis Simsar](https://enis.dev/), [Thomas Hofmann](https://da.inf.ethz.ch/people/ThomasHofmann)
 
 ></p>
 >
