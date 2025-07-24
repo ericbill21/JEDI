@@ -229,6 +229,8 @@ class JEDI:
         """Perform a gradient update on the input tensor x."""
         if self.use_sign:
             x.grad.sign_()
+        else:
+            x.grad = F.normalize(x.grad, dim=1, p=2)
 
         return x - self.lr * x.grad
 

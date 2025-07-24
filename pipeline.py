@@ -1054,8 +1054,9 @@ class SD3JediPipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingleFileMixin
                 self._joint_attention_kwargs.update(ip_adapter_image_embeds=ip_adapter_image_embeds)
 
         # 6.5 Register the jedi module to the attention processor
-        for block in self.transformer.transformer_blocks:   
-            block.attn.set_processor(JointAttnProcessor2_0(jedi))
+        if jedi is not None:
+            for block in self.transformer.transformer_blocks:   
+                block.attn.set_processor(JointAttnProcessor2_0(jedi))
 
         js_pos_ls = []
         js_neg_ls = []
@@ -1095,7 +1096,8 @@ class SD3JediPipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingleFileMixin
                 # broadcast to batch dimension in a way that's compatible with ONNX/Core ML
                 timestep = t.expand(latent_model_input.shape[0])
 
-                jedi.activate_storage()
+                if jedi is not None:
+                    jedi.activate_storage()
 
                 noise_pred = self.transformer(
                     hidden_states=latent_model_input,
@@ -1106,14 +1108,15 @@ class SD3JediPipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingleFileMixin
                     return_dict=False,
                 )[0]
 
-                # No optimization, only calculating the metrics
-                js_pos, js_neg, ent = jedi.compute_loss(return_components=True, skip_cfg=True)
-                js_pos_ls.append(js_pos)
-                js_neg_ls.append(js_neg)
-                ent_ls.append(ent)
+                if jedi is not None:
+                    # No optimization, only calculating the metrics
+                    js_pos, js_neg, ent = jedi.compute_loss(return_components=True, skip_cfg=True)
+                    js_pos_ls.append(js_pos)
+                    js_neg_ls.append(js_neg)
+                    ent_ls.append(ent)
 
-                jedi.reset_storage()
-                jedi.deactivate_storage()
+                    jedi.reset_storage()
+                    jedi.deactivate_storage()
 
                 # perform guidance
                 if self.do_classifier_free_guidance:
