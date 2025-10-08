@@ -67,12 +67,12 @@ JEDI will then apply its disentanglement objective during inference to improve c
 If you find our work useful, please consider citing our paper:
 
 ```
-@misc{bill2025jedi,
-      title={JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models}, 
-      author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
-      year={2025},
-      eprint={2505.19166},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
+@inproceedings{
+    bill2025jedi,
+    title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},
+    author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
+    booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},
+    year={2025},
+    url={https://openreview.net/forum?id=HVQ3wL2jPI}
 }
 ```
