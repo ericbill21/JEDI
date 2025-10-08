@@ -16,15 +16,6 @@ Key highlights:
 - ✅ Improves image alignment to compositional prompts
 - ✅ Introduces a lightweight, CLIP-free disentanglement score from internal attention distributions
 
-
-
-<p align="center">
-    <img src="https://ericbill21.github.io/JEDI/static/images/teaser.png" width="800px"/>  
-    <br>
-    <!-- Our training-free method combines a contrastive objective with test-time optimization, significantly improving how models such as Imagen and Stable Diffusion generate images with text prompts consisting of multiple concepts or subjects such as "a bear and a horse"  -->
-</p>
-
-
 ## 🚀 Setup
 
 ### 1. Clone the Repository
